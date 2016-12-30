@@ -9,7 +9,9 @@ module.exports = {
       test:/\.js?$/,
       loader:'babel-loader',
       exclude:/node_modules/,
-      query:{compact:false,presets:['es2015','react']}
-        }]
+      query:{
+        compact:false,
+        presets:['es2015','react','stage-1']}
+      }]
     }
 };

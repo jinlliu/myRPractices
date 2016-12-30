@@ -2,15 +2,25 @@ import React,{Component} from 'react';
 import ReactDOM from 'react-dom';
 
 class HelloWorld extends Component{
+	myshow = () =>{
+		console.log(this.props.title);
+		console.log(this.props.contents);
+		console.log(this.props.name);
+	};
+
     render(){
        return(
-            <h1>hello,world</h1>
+       		<div>
+       			<h1>HelloWorld</h1>            
+            	<button onClick={this.myshow}>Click Button</button>
+            </div>
         )
    }
 }
 
-//渲染虚拟dom
+//render virtural dom
+const data={title:'this is a title',contents:'this is contents'};
 ReactDOM.render(
-    <HelloWorld />,
+    <HelloWorld {...data} name={'this is name'}/>,
     document.getElementById('helloworld')
 );
